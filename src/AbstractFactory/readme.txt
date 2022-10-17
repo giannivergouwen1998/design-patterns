@@ -1,0 +1,1 @@
+De abstract factory gebruik je als je sub classes meer

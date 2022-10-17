@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  php:
+    container_name: php-container
+    working_dir: /app
+    environment:
+      COMPOSER_AUTH: '{"github-oauth":{"github.com":"${GITHUB_TOKEN:-token}"} }'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app:delegated
+      - ~/.composer/cache:/composer/cache:delegated
