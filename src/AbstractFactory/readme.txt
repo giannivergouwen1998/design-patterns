@@ -1,1 +1,2 @@
-De abstract factory gebruik je als je sub classes meer
+De abstract factory gebruik je als je moet werken met gerelateerde classes en je wilt deze niet van de parent afhankelijk maken.
+De abstract factory is handig omdat je dan je code kan uitbreiden zonder dat het elkaar in de weg zit.
