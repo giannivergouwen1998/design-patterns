@@ -2,7 +2,7 @@
 
 namespace App\AbstractFactory;
 
-class Button
+class SearchBar
 {
     private int $length;
     private int $width;
@@ -16,16 +16,16 @@ class Button
     /**
      * @return int
      */
-    public function getWidth(): int
+    public function getLength(): int
     {
-        return $this->width;
+        return $this->length;
     }
 
     /**
      * @return int
      */
-    public function getLength(): int
+    public function getWidth(): int
     {
-        return $this->length;
+        return $this->width;
     }
 }
