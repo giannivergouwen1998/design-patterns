@@ -13,5 +13,10 @@
             "App\\": "src/",
             "Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "cs-fix": "php-cs-fixer fix --verbose --diff",
+        "phpstan": "phpstan analyze --no-progress --memory-limit=-1",
+        "test": "vendor/bin/phpunit tests"
     }
 }
