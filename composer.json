@@ -16,7 +16,7 @@
         }
     },
     "scripts": {
-        "cs-fix": "php-cs-fixer fix --verbose --diff",
+        "cs-check": "php-cs-fixer fix -vvv --diff --dry-run",
         "phpstan": "phpstan analyze --no-progress --memory-limit=-1",
         "test": "vendor/bin/phpunit tests"
     },
