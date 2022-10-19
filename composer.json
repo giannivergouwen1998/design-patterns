@@ -1,5 +1,6 @@
 {
     "name": "root/app",
+    "description": "Some description will be useful too!",
     "type": "project",
     "require": {
         "phpunit/phpunit": "^9.5",
