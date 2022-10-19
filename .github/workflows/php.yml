@@ -33,7 +33,7 @@ jobs:
       run: composer run-script test
       
     - name: Run CS-fix
-      run: composer run-script cs-fix
+      run: composer run-script cs-check
       
     - name: Run PHPStan
       run: composer run-script phpstan
