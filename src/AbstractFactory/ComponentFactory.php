@@ -2,8 +2,15 @@
 
 namespace App\AbstractFactory;
 
-interface ComponentFactory
+class ComponentFactory implements ComponentFactoryInterface
 {
-    public function makeButton(int $length, int $width): Button;
-    public function makeSearchBar(int $length, int $width): SearchBar;
+    public function MakeDarkButton(int $width, int $height, string $color): DarkButtonInterface
+    {
+        return new DarkButton($width, $height, $color);
+    }
+
+    public function MakeLightButton(int $width, int $height, string $color): LightButtonInterface
+    {
+        return new LightButton($width, $height, $color);
+    }
 }

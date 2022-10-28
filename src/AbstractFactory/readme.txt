@@ -1,2 +1,6 @@
-De abstract factory gebruik je als je moet werken met gerelateerde classes en je wilt deze niet van de parent afhankelijk maken.
-De abstract factory is handig omdat je dan je code kan uitbreiden zonder dat het elkaar in de weg zit.
+Abstract factory.
+
+De abstract factory wordt gebruikt als je gerelateerde objecten aan wilt roepen.
+
+Bijvoorbeeld in mijn voorbeeld (eigenlijk het voorbeeld van Matthijs (; ) heb je een dark button en een light button, deze zijn gerelateerd aan elkaar.
+de abstract factory zorgt ervoor dat je zowel een dark button kunt maken als een light button kunt maken via dezelfde functie.
