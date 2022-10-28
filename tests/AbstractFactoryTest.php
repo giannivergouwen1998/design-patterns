@@ -2,45 +2,72 @@
 
 namespace Tests;
 
-use App\AbstractFactory\Button;
+use App\AbstractFactory\DarkButton;
+use App\AbstractFactory\LightButton;
+use App\AbstractFactory\UiBuilder;
 use App\AbstractFactory\ComponentFactory;
-use App\AbstractFactory\LightThemeComponentFactory;
-use App\AbstractFactory\SearchBar;
-use App\AbstractFactory\UIBuilder;
 use PHPUnit\Framework\TestCase;
+
 
 class AbstractFactoryTest extends TestCase
 {
-    /** @test */
-    public function it_can_render_a_button(): void
+
+    public UiBuilder $builder;
+    const WIDTH = 12;
+    const HEIGTH = 20;
+
+    public function setUp(): void
     {
-        $factory = new LightThemeComponentFactory();
-        $builder = new UIBuilder($factory);
-        self::assertInstanceOf(Button::class, $builder->render(30,30, 'button'));
+        $factory = new ComponentFactory();
+        $this->builder = new UiBuilder($factory);
     }
 
     /** @test */
-    public function it_can_render_a_searchbar(): void
+    public function it_can_render_a_dark_button(): void
     {
-        $factory = new LightThemeComponentFactory();
-        $builder = new UIBuilder($factory);
-        self::assertInstanceOf(SearchBar::class, $builder->render(30,30, 'searchbar'));
+        self::assertInstanceOf(DarkButton::class, $this->builder->render(self::WIDTH, self::HEIGTH, 'dark'));
+    }
+
+    /** @test */
+    public function it_can_render_a_light_button(): void
+    {
+        self::assertInstanceOf(LightButton::class, $this->builder->render(self::WIDTH, self::HEIGTH, 'light'));
     }
 
     /** @test */
     public function not_instance_of(): void
     {
-        $factory = new LightThemeComponentFactory();
-        $builder = new UIBuilder($factory);
-        self::assertNotInstanceOf(Button::class, $builder->render(30,30, 'searchbar'));
-        self::assertNotInstanceOf(SearchBar::class, $builder->render(30,30, 'button'));
+        self::assertNotInstanceOf(DarkButton::class, $this->builder->render(self::WIDTH, self::HEIGTH, 'light'));
+        self::assertNotInstanceOf(LightButton::class, $this->builder->render(self::WIDTH, self::HEIGTH, 'dark'));
     }
 
     /** @test */
-    public function is_int(): void
+    public function is_int_dark_button(): void
     {
-        $button = new Button(30, 30);
-        self::assertIsInt($button->getLength());
+        $button = new DarkButton(self::WIDTH, self::HEIGTH, 'dark');
         self::assertIsInt($button->getWidth());
+        self::assertIsInt($button->getHeight());
+    }
+
+    /** @test */
+    public function is_int_light_button(): void
+    {
+        $button = new LightButton(self::WIDTH, self::HEIGTH, 'light');
+        self::assertIsInt($button->getWidth());
+        self::assertIsInt($button->getHeight());
+    }
+
+    /** @test */
+    public function is_string_dark_button(): void
+    {
+        $button = new DarkButton(self::WIDTH, self::HEIGTH, 'dark');
+        self::assertIsString($button->getColor());
+    }
+
+    /** @test */
+    public function is_string_light_button(): void
+    {
+        $button = new LightButton(self::WIDTH, self::HEIGTH, 'light');
+        self::assertIsString($button->getColor());
     }
 }
