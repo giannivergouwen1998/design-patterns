@@ -2,14 +2,23 @@
 
 namespace App\Builder;
 
-final class HtmlPage
+final class HtmlPage extends Page
 {
-    public ?string $title = null;
-    public ?string $paragraph = null;
-    public ?string $list = null;
-    public ?string $heading = null;
-
-    public function __construct()
+    public function render(): string
     {
+        return '<!DOCTYPE html>
+                    <html>
+                        <header>
+                            <title>'.$this->title.'<title>
+                        </header>
+                        <body>
+                            <h1>'.$this->heading.'</h1>
+                            <p>'.$this->paragraph.'</p>
+                             <ul>
+                              '.$this->list.'
+                            </ul> 
+                        </body>
+                    </html>'
+        ;
     }
 }

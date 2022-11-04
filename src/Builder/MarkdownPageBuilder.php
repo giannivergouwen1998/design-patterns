@@ -2,17 +2,17 @@
 
 namespace App\Builder;
 
-final class HtmlPageBuilder implements PageBuilder
+final class MarkdownPageBuilder implements PageBuilder
 {
     /** @var array<string> $options */
     private array $options;
-    private HtmlPage $page;
+    private MarkdownPage $page;
 
     /** @phpstan-ignore-next-line */
     public function __construct(array $options)
     {
         $this->options = $options;
-        $this->page = new HtmlPage();
+        $this->page = new MarkdownPage();
     }
 
     public function setTitle(): void
@@ -32,7 +32,7 @@ final class HtmlPageBuilder implements PageBuilder
         $list = '';
 
         foreach ($items as $item) {
-            $list .= '<li>'.$item.'</li>';
+            $list .= ' - '.$item;
         }
 
         $this->page->list = $list;
