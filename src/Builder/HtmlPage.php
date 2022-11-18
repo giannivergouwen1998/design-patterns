@@ -14,9 +14,6 @@ final class HtmlPage extends Page
                         <body>
                             <h1>'.$this->heading.'</h1>
                             <p>'.$this->paragraph.'</p>
-                             <ul>
-                              '.$this->list.'
-                            </ul> 
                         </body>
                     </html>'
         ;

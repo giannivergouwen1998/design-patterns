@@ -10,7 +10,6 @@ final class MarkdownPage extends Page
             %'.$this->title.'
             #'.$this->heading.'
             '.$this->paragraph.'
-            '.$this->list.'
         ';
     }
 }

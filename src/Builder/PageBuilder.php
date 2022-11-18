@@ -4,9 +4,8 @@ namespace App\Builder;
 
 interface PageBuilder
 {
-    public function setTitle(): void;
-    public function setParagraph(): void;
-    public function setList(): void;
-    public function setHeading(): void;
+    public function setTitle(string $title): self;
+    public function setParagraph(string $paragraph): self;
+    public function setHeading(string $heading): self;
     public function getPage(): string;
 }
