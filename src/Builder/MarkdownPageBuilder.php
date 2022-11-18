@@ -4,43 +4,29 @@ namespace App\Builder;
 
 final class MarkdownPageBuilder implements PageBuilder
 {
-    /** @var array<string> $options */
-    private array $options;
     private MarkdownPage $page;
 
-    /** @phpstan-ignore-next-line */
-    public function __construct(array $options)
+    public function __construct(MarkdownPage $page)
     {
-        $this->options = $options;
-        $this->page = new MarkdownPage();
+        $this->page = $page;
     }
 
-    public function setTitle(): void
+    public function setTitle(string $title): self
     {
-        $this->page->title = $this->options['title'];
+        $this->page->title = $title;
+        return $this;
     }
 
-    public function setParagraph(): void
+    public function setParagraph(string $paragraph): self
     {
-        $this->page->paragraph = $this->options['paragraph'];
+        $this->page->paragraph = $paragraph;
+        return $this;
     }
 
-    public function setList(): void
+    public function setHeading(string $heading): self
     {
-        /** @var array<string> $items */
-        $items = $this->options['list'];
-        $list = '';
-
-        foreach ($items as $item) {
-            $list .= ' - '.$item;
-        }
-
-        $this->page->list = $list;
-    }
-
-    public function setHeading(): void
-    {
-        $this->page->heading = $this->options['heading'];
+        $this->page->heading = $heading;
+        return $this;
     }
 
     public function getPage(): string
