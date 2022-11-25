@@ -4,6 +4,10 @@ namespace App\Builder;
 
 final class HtmlPage extends Page
 {
+    public string $title;
+    public string $paragraph;
+    public string $heading;
+
     public function render(): string
     {
         return '<!DOCTYPE html>
@@ -17,5 +21,20 @@ final class HtmlPage extends Page
                         </body>
                     </html>'
         ;
+    }
+
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
+    }
+
+    public function setParagraph(string $parargraph): void
+    {
+        $this->paragraph = $parargraph;
+    }
+
+    public function setHeading(string $heading): void
+    {
+        $this->heading = $heading;
     }
 }
