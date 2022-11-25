@@ -13,19 +13,19 @@ final class HtmlPageBuilder implements PageBuilder
 
     public function setTitle(string $title): self
     {
-        $this->page->title = $title;
+        $this->page->setTitle($title);
         return $this;
     }
 
     public function setParagraph(string $paragraph): self
     {
-        $this->page->paragraph = $paragraph;
+        $this->page->setParagraph($paragraph);
         return $this;
     }
 
     public function setHeading(string $heading): self
     {
-        $this->page->heading = $heading;
+        $this->page->setHeading($heading);
         return $this;
     }
 

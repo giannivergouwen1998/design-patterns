@@ -2,9 +2,9 @@
 
 namespace App\Builder;
 
-class Page
+abstract class Page
 {
-    public string $title;
-    public string $paragraph;
-    public string $heading;
+    abstract public function setTitle(string $title): void;
+    abstract public function setParagraph(string $parargraph): void;
+    abstract public function setHeading(string $heading): void;
 }
