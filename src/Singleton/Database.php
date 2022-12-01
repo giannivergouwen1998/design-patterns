@@ -10,7 +10,6 @@ final class Database
 
     private function __construct()
     {
-        echo "Connection created!";
     }
 
     public static function connect(): Database
