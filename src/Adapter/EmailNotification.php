@@ -13,7 +13,7 @@ final class EmailNotification implements Notification
 
     public function send(string $title, string $message): int
     {
-        mail($this->email, $title, $message);
+//        mail($this->email, $title, $message);
         return 200;
     }
 }
