@@ -2,35 +2,44 @@
 
 namespace Tests;
 
-use App\Bridge\HtmlFormatter;
-use App\Bridge\PingService;
-use App\Bridge\PlainTextFormatter;
-use App\Bridge\TextService;
+use App\Bridge\About;
+use App\Bridge\Contact;
+use App\Bridge\DarkTheme;
+use App\Bridge\Home;
+use App\Bridge\LightTheme;
 use PHPUnit\Framework\TestCase;
 
 final class BridgeTest extends TestCase
 {
     /** @test */
-    public function it_can_format_html(): void
+    public function it_can_render_dark_theme(): void
     {
-        $textService = new TextService(new HtmlFormatter());
-        $pingService = new PingService(new HtmlFormatter());
+        $homePage = new Home(new DarkTheme());
+        $aboutPage = new About(new DarkTheme());
+        $contactPage = new Contact(new DarkTheme());
 
-        self::assertSame('<p>Text service</p>', $textService->get());
-        self::assertSame('<p>Pong</p>', $pingService->get());
-        self::assertIsString($textService->get());
-        self::assertIsString($pingService->get());
+        self::assertIsString($homePage->getContent());
+        self::assertIsString($aboutPage->getContent());
+        self::assertIsString($contactPage->getContent());
+
+        self::assertSame('Home page in dark theme', $homePage->getContent());
+        self::assertSame('About page in dark theme', $aboutPage->getContent());
+        self::assertSame('Contact page in dark theme', $contactPage->getContent());
     }
 
     /** @test */
-    public function it_can_format_plain_text(): void
+    public function it_can_render_light_theme(): void
     {
-        $textService = new TextService(new PlainTextFormatter());
-        $pingService = new PingService(new PlainTextFormatter());
+        $homePage = new Home(new LightTheme());
+        $aboutPage = new About(new LightTheme());
+        $contactPage = new Contact(new LightTheme());
 
-        self::assertSame('Text service', $textService->get());
-        self::assertSame('Pong', $pingService->get());
-        self::assertIsString($textService->get());
-        self::assertIsString($pingService->get());
+        self::assertIsString($homePage->getContent());
+        self::assertIsString($aboutPage->getContent());
+        self::assertIsString($contactPage->getContent());
+
+        self::assertSame('Home page in light theme', $homePage->getContent());
+        self::assertSame('About page in light theme', $aboutPage->getContent());
+        self::assertSame('Contact page in light theme', $contactPage->getContent());
     }
 }
