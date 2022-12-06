@@ -7,7 +7,6 @@ use App\Composite\InputElement;
 use App\Composite\Renderable;
 use App\Composite\TextElement;
 use PHPUnit\Framework\TestCase;
-use function PHPUnit\Framework\assertInstanceOf;
 use function PHPUnit\Framework\assertSame;
 
 final class CompositeTest extends TestCase
@@ -45,5 +44,15 @@ final class CompositeTest extends TestCase
             '<form>Email:<input type="text"/>Password:<input type="text"/></form>',
             $form->render()
         );
+    }
+
+    /** @test */
+    public function is_string(): void
+    {
+        $form = new Form();
+        $form->addElement(new TextElement('Email:'));
+        $form->addElement(new InputElement());
+
+        self::assertIsString($form->render());
     }
 }
