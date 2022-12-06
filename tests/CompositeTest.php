@@ -13,7 +13,7 @@ use function PHPUnit\Framework\assertSame;
 final class CompositeTest extends TestCase
 {
     /** @test */
-    public function it_can_add_an_element(): void
+    public function it_can_add_nested_elements(): void
     {
         $form = new Form();
         $form->addElement(new TextElement('Email:'));
@@ -29,5 +29,21 @@ final class CompositeTest extends TestCase
             $form->render()
         );
 
+    }
+
+    /** @test */
+    public function it_can_add_elements(): void
+    {
+        $form = new Form();
+        $form->addElement(new TextElement('Email:'));
+        $form->addElement(new InputElement());
+
+        $form->addElement(new TextElement('Password:'));
+        $form->addElement(new InputElement());
+
+        assertSame(
+            '<form>Email:<input type="text"/>Password:<input type="text"/></form>',
+            $form->render()
+        );
     }
 }
