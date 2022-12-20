@@ -3,7 +3,7 @@
 ### Waar wordt het voor gebruikt?
 Je gebruikt het als je een groep van objecten hetzelfde wilt behandelen als een instantie van een object. (Boom structuur)
 
-### Voorbeeld?
+### Voorbeeld
 Stel je hebt een product als object, en je wilt dit product gaan inpakken in een doos. 
 Je hebt dus nu ook een doos als object. 
 
