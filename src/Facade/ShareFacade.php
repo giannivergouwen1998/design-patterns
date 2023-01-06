@@ -16,10 +16,10 @@ final class ShareFacade
     }
 
     /** @return array<string> */
-    public function share(string $url, string $title, string $status): array
+    public function share(string $url, string $title, string $message): array
     {
         return [
-            'twitter' => $this->twitter->tweet($status, $url),
+            'twitter' => $this->twitter->tweet($message, $url),
             'google' => $this->google->share($url),
             'reddit' => $this->reddit->reddit($url, $title),
         ];

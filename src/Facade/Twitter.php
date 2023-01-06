@@ -4,8 +4,8 @@ namespace App\Facade;
 
 final class Twitter
 {
-    public function tweet(string $status, string $url): string
+    public function tweet(string $message, string $url): string
     {
-        return "Tweeted: ".$status.' from: '.$url;
+        return "Tweeted: ".$message.' from: '.$url;
     }
 }
