@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 final class DecoratorTest extends TestCase
 {
+    public const MONEY = 2863.12;
+    public const DESCRIPTION = 'A basic website with a custom design and year hosting ';
     /** @test */
     public function it_can_add_features(): void
     {
@@ -20,10 +22,10 @@ final class DecoratorTest extends TestCase
 
 
         self::assertIsFloat($websiteWithCustomDesignAndYearHosting->getPrice());
-        self::assertSame(2863.12, $websiteWithCustomDesignAndYearHosting->getPrice());
+        self::assertSame(self::MONEY, $websiteWithCustomDesignAndYearHosting->getPrice());
 
         self::assertIsString($websiteWithCustomDesignAndYearHosting->getDescription());
-        self::assertSame('A basic website with a custom design and year hosting ', $websiteWithCustomDesignAndYearHosting->getDescription());
+        self::assertSame(self::DESCRIPTION, $websiteWithCustomDesignAndYearHosting->getDescription());
 
     }
 }
