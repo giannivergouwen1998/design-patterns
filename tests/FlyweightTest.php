@@ -2,42 +2,33 @@
 
 namespace Tests;
 
-use App\FW2\TextFactory;
+use App\Flyweight\CharacterFactory;
+use App\Flyweight\Context;
+use App\Flyweight\Layout;
 use PHPUnit\Framework\TestCase;
+use function PHPUnit\Framework\assertSame;
 
 final class FlyweightTest extends TestCase
 {
-    /** @var array<string> */
-    private array $characters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    /** @test */
+    public function it_can_initialize_the_same_object(): void
+    {
+        $characterFactory = new CharacterFactory();
 
-    /** @var array<string> */
-    private array $fonts = ['Arial', 'Times New Roman', 'Verdana', 'Helvetica'];
+        $character1 = $characterFactory->createCharacters('a');
+        $character2 = $characterFactory->createCharacters('a');
+
+        self::assertSame($character1, $character2);
+    }
 
     /** @test */
-    public function test_flyweight(): void
+    public function it_can_create_a_new_character_class(): void
     {
-        $factory = new TextFactory();
+        $characterFactory = new CharacterFactory();
 
-        for ($i = 0; $i <= 10; $i++) {
-            foreach ($this->characters as $char) {
-                foreach ($this->fonts as $font) {
-                    $flyweight = $factory->get($char);
+        $character1 = $characterFactory->createCharacters('a');
+        $character2 = $characterFactory->createCharacters('b');
 
-                    $rendered = $flyweight->render($font);
-
-                    $this->assertSame(sprintf('Character %s with font %s', $char, $font), $rendered);
-                }
-            }
-        }
-
-        foreach ($this->fonts as $word) {
-            $flyweight = $factory->get($word);
-
-            $rendered = $flyweight->render('foobar');
-
-            $this->assertSame(sprintf('Word %s with font foobar', $word), $rendered);
-        }
-
-        $this->assertCount(count($this->characters) + count($this->fonts), $factory);
+        self::assertNotSame($character1, $character2);
     }
 }
