@@ -4,6 +4,7 @@ namespace App\Flyweight;
 
 final class Context
 {
+    /** @var array<int, Layout> */
     private array $layouts = [];
 
     private int $current = 0;

@@ -14,5 +14,4 @@ final class Character
     {
         return $context->layout()->render($this->char);
     }
-
 }
