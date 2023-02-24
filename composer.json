@@ -20,5 +20,8 @@
         "phpstan": "vendor/bin/phpstan analyse -l 9 src tests",
         "test": "vendor/bin/phpunit tests"
     },
-    "license": "MIT"
+    "license": "MIT",
+    "require-dev": {
+        "symfony/var-dumper": "^6.2"
+    }
 }

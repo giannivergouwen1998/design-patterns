@@ -541,6 +541,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/var-dumper' => array(
+            'pretty_version' => 'v6.2.5',
+            'version' => '6.2.5.0',
+            'reference' => '44b7b81749fd20c1bdf4946c041050e22bc8da27',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/var-dumper',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'theseer/tokenizer' => array(
             'pretty_version' => '1.2.1',
             'version' => '1.2.1.0',
