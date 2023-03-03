@@ -2,10 +2,9 @@
 
 namespace Tests;
 
-use App\Composite\Form;
-use App\Composite\InputElement;
-use App\Composite\Renderable;
-use App\Composite\TextElement;
+use App\Structural\Composite\Form;
+use App\Structural\Composite\InputElement;
+use App\Structural\Composite\TextElement;
 use PHPUnit\Framework\TestCase;
 use function PHPUnit\Framework\assertSame;
 

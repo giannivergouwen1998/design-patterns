@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use App\Adapter\EmailNotification;
-use App\Adapter\SlackApi;
-use App\Adapter\SlackNotification;
+use App\Structural\Adapter\EmailNotification;
+use App\Structural\Adapter\SlackApi;
+use App\Structural\Adapter\SlackNotification;
 use PHPUnit\Framework\TestCase;
 use function PHPUnit\Framework\assertSame;
 

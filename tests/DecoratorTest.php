@@ -2,9 +2,9 @@
 
 namespace Tests;
 
-use App\Decorator\BaseWebsite;
-use App\Decorator\CustomDesign;
-use App\Decorator\YearHosting;
+use App\Structural\Decorator\BaseWebsite;
+use App\Structural\Decorator\CustomDesign;
+use App\Structural\Decorator\YearHosting;
 use PHPUnit\Framework\TestCase;
 
 final class DecoratorTest extends TestCase

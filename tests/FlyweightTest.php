@@ -2,11 +2,8 @@
 
 namespace Tests;
 
-use App\Flyweight\CharacterFactory;
-use App\Flyweight\Context;
-use App\Flyweight\Layout;
+use App\Structural\Flyweight\CharacterFactory;
 use PHPUnit\Framework\TestCase;
-use function PHPUnit\Framework\assertSame;
 
 final class FlyweightTest extends TestCase
 {

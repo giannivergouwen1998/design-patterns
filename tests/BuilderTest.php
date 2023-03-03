@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use App\Builder\HtmlPage;
-use App\Builder\HtmlPageBuilder;
-use App\Builder\MarkdownPage;
-use App\Builder\MarkdownPageBuilder;
+use App\Creational\Builder\HtmlPage;
+use App\Creational\Builder\HtmlPageBuilder;
+use App\Creational\Builder\MarkdownPage;
+use App\Creational\Builder\MarkdownPageBuilder;
 use PHPUnit\Framework\TestCase;
 
 final class BuilderTest extends TestCase

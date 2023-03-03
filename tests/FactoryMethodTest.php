@@ -1,9 +1,9 @@
 <?php
 
-use App\FactoryMethod\CommunityExecutive as CommunityExecutiveAlias;
-use App\FactoryMethod\Developer;
-use App\FactoryMethod\DevelopmentManager as DevelopmentManagerAlias;
-use App\FactoryMethod\MarketingManager as MarketingManagerAlias;
+use App\Creational\FactoryMethod\CommunityExecutive as CommunityExecutiveAlias;
+use App\Creational\FactoryMethod\Developer;
+use App\Creational\FactoryMethod\DevelopmentManager as DevelopmentManagerAlias;
+use App\Creational\FactoryMethod\MarketingManager as MarketingManagerAlias;
 use PHPUnit\Framework\TestCase;
 
 class FactoryMethodTest extends TestCase

@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use App\AbstractFactory\DarkButton;
-use App\AbstractFactory\LightButton;
-use App\AbstractFactory\UiBuilder;
-use App\AbstractFactory\ComponentFactory;
+use App\Creational\AbstractFactory\ComponentFactory;
+use App\Creational\AbstractFactory\DarkButton;
+use App\Creational\AbstractFactory\LightButton;
+use App\Creational\AbstractFactory\UiBuilder;
 use PHPUnit\Framework\TestCase;
 
 

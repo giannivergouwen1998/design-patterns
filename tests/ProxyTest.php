@@ -2,10 +2,9 @@
 
 namespace Tests;
 
-use App\Proxy\CachingDownloader;
-use App\Proxy\SimpleDownloader;
+use App\Structural\Proxy\CachingDownloader;
+use App\Structural\Proxy\SimpleDownloader;
 use PHPUnit\Framework\TestCase;
-use function PHPStan\dumpType;
 
 final class ProxyTest extends TestCase
 {

@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use App\SimpleFactory\Bicycle;
-use App\SimpleFactory\BicycleFactory;
+use App\Creational\SimpleFactory\Bicycle;
+use App\Creational\SimpleFactory\BicycleFactory;
+use App\Creational\SimpleFactory\ElectricBike;
 use PHPUnit\Framework\TestCase;
-use App\SimpleFactory\ElectricBike;
 
 class SimpleFactoryTest extends  TestCase
 {

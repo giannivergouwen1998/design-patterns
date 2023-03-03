@@ -2,8 +2,8 @@
 
 namespace Tests;
 
+use App\Creational\Singleton\Database;
 use Exception;
-use App\Singleton\Database;
 use PHPUnit\Framework\TestCase;
 use function PHPUnit\Framework\assertInstanceOf;
 use function PHPUnit\Framework\assertSame;

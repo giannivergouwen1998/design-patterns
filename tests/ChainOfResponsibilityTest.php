@@ -2,11 +2,10 @@
 
 namespace Tests;
 
-use App\ChainOfResponsibility\DebugLogHandler;
-use App\ChainOfResponsibility\ErrorLogHandler;
-use App\ChainOfResponsibility\Handler;
-use App\ChainOfResponsibility\InformationLogHandler;
-use App\ChainOfResponsibility\LogType;
+use App\Behavioral\ChainOfResponsibility\DebugLogHandler;
+use App\Behavioral\ChainOfResponsibility\ErrorLogHandler;
+use App\Behavioral\ChainOfResponsibility\InformationLogHandler;
+use App\Behavioral\ChainOfResponsibility\LogType;
 use PHPUnit\Framework\TestCase;
 
 final class ChainOfResponsibilityTest extends TestCase

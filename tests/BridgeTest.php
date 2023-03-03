@@ -2,11 +2,11 @@
 
 namespace Tests;
 
-use App\Bridge\About;
-use App\Bridge\Contact;
-use App\Bridge\DarkTheme;
-use App\Bridge\Home;
-use App\Bridge\LightTheme;
+use App\Structural\Bridge\About;
+use App\Structural\Bridge\Contact;
+use App\Structural\Bridge\DarkTheme;
+use App\Structural\Bridge\Home;
+use App\Structural\Bridge\LightTheme;
 use PHPUnit\Framework\TestCase;
 
 final class BridgeTest extends TestCase

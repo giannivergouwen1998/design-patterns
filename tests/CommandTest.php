@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use App\Command\AddCommand;
-use App\Command\Calculator;
-use App\Command\CommandInvoker;
-use App\Command\DivideCommand;
-use App\Command\MultiplyCommand;
-use App\Command\SubtractCommand;
+use App\Behavioral\Command\AddCommand;
+use App\Behavioral\Command\Calculator;
+use App\Behavioral\Command\CommandInvoker;
+use App\Behavioral\Command\DivideCommand;
+use App\Behavioral\Command\MultiplyCommand;
+use App\Behavioral\Command\SubtractCommand;
 use PHPUnit\Framework\TestCase;
 
 final class CommandTest extends TestCase

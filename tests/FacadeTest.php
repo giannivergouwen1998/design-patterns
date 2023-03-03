@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use App\Facade\Google;
-use App\Facade\Reddit;
-use App\Facade\ShareFacade;
-use App\Facade\Twitter;
+use App\Structural\Facade\Google;
+use App\Structural\Facade\Reddit;
+use App\Structural\Facade\ShareFacade;
+use App\Structural\Facade\Twitter;
 use PHPUnit\Framework\TestCase;
 
 final class FacadeTest extends TestCase

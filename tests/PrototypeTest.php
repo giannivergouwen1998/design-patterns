@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use App\Prototype\Laptop;
-use App\Prototype\Smartphone;
+use App\Creational\Prototype\Laptop;
+use App\Creational\Prototype\Smartphone;
 use PHPUnit\Framework\TestCase;
 use function PHPUnit\Framework\assertInstanceOf;
 
