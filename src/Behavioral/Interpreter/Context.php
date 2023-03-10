@@ -6,6 +6,7 @@ namespace App\Behavioral\Interpreter;
 
 final class Context
 {
+    /** @var array<string, boolean> */
     private array $variables;
 
     /**
@@ -13,8 +14,7 @@ final class Context
      */
     public function lookUp(string $name): bool
     {
-        if(!key_exists($name, $this->variables))
-        {
+        if (!key_exists($name, $this->variables)) {
             throw new \Exception("Key not found");
         }
 

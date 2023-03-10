@@ -8,13 +8,12 @@ final class VariableExpression implements Expression
 {
     public function __construct(
         public string $name
-    )
-    {
+    ) {
     }
 
     public function interpret(Context $context): bool
     {
-       return $context->lookUp($this->name);
+        return $context->lookUp($this->name);
     }
 
     public function getName(): string

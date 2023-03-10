@@ -9,8 +9,7 @@ final class AndExpression implements Expression
     public function __construct(
         private Expression $first,
         private Expression $second
-    )
-    {
+    ) {
     }
 
     public function interpret(Context $context): bool
