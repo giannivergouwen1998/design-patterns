@@ -17,9 +17,9 @@ final class IteratorTest extends TestCase
     {
         $collection = new ComputerCollection();
 
-        $collection->setName('Apple');
-        $collection->setName('Windows');
-        $collection->setName('Linux');
+        $collection->addName('Apple');
+        $collection->addName('Windows');
+        $collection->addName('Linux');
 
         $computers = [];
         foreach ($collection->getIterator() as $item)
