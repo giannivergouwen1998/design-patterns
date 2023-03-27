@@ -17,7 +17,7 @@ final class ComputerCollection implements \IteratorAggregate
         return new ComputerIterator($this);
     }
 
-    public function setName(string $string): void
+    public function addName(string $string): void
     {
         $this->names[] = $string;
     }
