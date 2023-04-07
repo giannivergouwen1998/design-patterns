@@ -17,16 +17,16 @@ final class MementoTest extends TestCase
 
         $ticket->open();
 
-        self::assertSame(State::OPENED, (string) $ticket->getState());
+        self::assertSame(State::OPENED, $ticket->getState());
 
         $memento = $ticket->saveToMemento();
 
         $ticket->assign();
 
-        self::assertSame(State::ASSIGNED, (string) $ticket->getState());
+        self::assertSame(State::ASSIGNED, $ticket->getState());
 
         $ticket->restoreFromMemento($memento);
 
-        self::assertSame(State::OPENED, (string) $ticket->getState());
+        self::assertSame(State::OPENED, $ticket->getState());
     }
 }

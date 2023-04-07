@@ -7,28 +7,28 @@ namespace App\Behavioral\Memento;
 final class Ticket implements Memento
 {
     public function __construct(
-        private State $state =  new State(State::CREATED)
+        private State $state =  State::CREATED
     ) {
     }
 
     public function open(): void
     {
-        $this->state = new State(State::OPENED);
+        $this->state = State::OPENED;
     }
 
     public function assign(): void
     {
-        $this->state = new State(State::ASSIGNED);
+        $this->state = State::ASSIGNED;
     }
 
     public function close(): void
     {
-        $this->state = new State(State::CLOSED);
+        $this->state = State::CLOSED;
     }
 
     public function saveToMemento(): ConcreteMemento
     {
-        return new ConcreteMemento(clone $this->state);
+        return new ConcreteMemento($this->state);
     }
 
     public function restoreFromMemento(ConcreteMemento $memento): void
