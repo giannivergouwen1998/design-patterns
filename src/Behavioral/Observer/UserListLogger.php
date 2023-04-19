@@ -9,7 +9,6 @@ use SplSubject;
 
 final class UserListLogger implements \SplObserver
 {
-
     #[ReturnTypeWillChange] public function update(SplSubject $subject): string
     {
         return 'All observers has been updated';
