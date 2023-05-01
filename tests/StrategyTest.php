@@ -22,11 +22,11 @@ final class StrategyTest extends TestCase
 
         self::assertSame('DIT IS EEN STUKJE TEKST', $textEditor->type(self::TEXT));
 
-        $textEditor->setState(new Lowercase());
+        $textEditor->setStrategy(new Lowercase());
 
         self::assertSame('dit is een stukje tekst', $textEditor->type(self::TEXT));
 
-        $textEditor->setState(new DefaultText());
+        $textEditor->setStrategy(new DefaultText());
 
         self::assertSame(self::TEXT, $textEditor->type(self::TEXT));
     }
