@@ -2,7 +2,7 @@
 
 namespace App\Behavioral\Strategy;
 
-interface WritingState
+interface Writingstrategy
 {
     public function write(string $words): string;
 }

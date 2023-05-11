@@ -7,11 +7,11 @@ namespace App\Behavioral\Strategy;
 final class TextEditor
 {
     public function __construct(
-        protected WritingState $strategy
+        protected Writingstrategy $strategy
     ) {
     }
 
-    public function setStrategy(WritingState $strategy): void
+    public function setStrategy(Writingstrategy $strategy): void
     {
         $this->strategy = $strategy;
     }
