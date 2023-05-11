@@ -4,41 +4,33 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use App\Behavioral\Visitor\House;
-use App\Behavioral\Visitor\Store;
-use App\Behavioral\Visitor\Visit;
-use App\Behavioral\Visitor\Work;
+use App\Behavioral\Visitor\Book;
+use App\Behavioral\Visitor\Document;
+use App\Behavioral\Visitor\PageCountVisitor;
 use PHPUnit\Framework\TestCase;
 
 final class VisitorTest extends TestCase
 {
-    /** @test */
-    public function it_can_visit_a_house(): void
+    private PageCountVisitor $visitor;
+
+    protected function setUp(): void
     {
-        $house = new House();
-
-        $visit = new Visit();
-
-        self::assertSame('house visited', $house->accept($visit));
+        $this->visitor = new PageCountVisitor();
     }
 
     /** @test */
-    public function it_can_visit_work(): void
-    {
-        $work = new Work();
+   public function it_can_count_pages_for_a_document(): void
+   {
+       $document = new Document(12);
 
-        $visit = new Visit();
+       self::assertSame(12, $document->accept($this->visitor));
+   }
 
-        self::assertSame('work visited', $work->accept($visit));
-    }
+   /** @test */
+   public function it_can_count_pages_for_a_book(): void
+   {
+       $book = new Book();
 
-    /** @test */
-    public function it_can_visit_a_store(): void
-    {
-        $store = new Store();
-
-        $visit = new Visit();
-
-        self::assertSame('store visited', $store->accept($visit));
-    }
+       self::assertSame(48, $book->accept($this->visitor));
+   }
 }
